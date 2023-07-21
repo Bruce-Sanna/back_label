@@ -1,0 +1,261 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Label;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class LabelSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // Creates first label schema (two columns with text)
+        Label::create([
+            'name' => 'Dymo30253',
+            'width'=> 8.9,
+            'height'=> 2.8,
+            'label_elements' => "[
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":true,
+                    \"x\":0.2,
+                    \"y\":0.5,
+                    \"size\":7,
+                    \"text\":\"ID:\"
+                },
+                {
+                    \"element_id\":\"id\",
+                    \"name\":\"Product ID\",
+                    \"type\":\"text\",
+                    \"is_bold\":true,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":0.5,
+                    \"size\":7
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"x\":0.2,
+                    \"y\":1,
+                    \"size\":8,
+                    \"text\":\"Qty:\"
+                },
+                {
+                    \"element_id\":\"quantity\",
+                    \"name\":\"Quantity\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":1,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Loc:\",
+                    \"x\":0.2,
+                    \"y\":1.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"location.slug\",
+                    \"name\":\"Location\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":1.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Brand:\",
+                    \"x\":0.2,
+                    \"y\":2,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"brand.slug\",
+                    \"name\":\"Brand\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":2,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Brand:\",
+                    \"x\":4.2,\"y\":1,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"brand.slug\",
+                    \"name\":\"Brand\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":5.6,
+                    \"y\":1,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"x\":4.2,
+                    \"y\":1.5,
+                    \"size\":8,
+                    \"text\":\"Stage:\"
+                },
+                {
+                    \"element_id\":\"stage.slug\",
+                    \"name\":\"Stage\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":5.6,
+                    \"y\":1.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Strain:\",
+                    \"x\":4.2,
+                    \"y\":2,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"strain.slug\",
+                    \"name\":\"Strain\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":5.6,
+                    \"y\":2,
+                    \"size\":8
+                }]"
+        ]);
+
+        // Creates label schema with QR
+        Label::create([
+            'name' => 'Dymo30252',
+            'width'=> 8.9,
+            'height'=> 3.2,
+            'label_elements' => "[
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"x\":0.2,
+                    \"y\":0.5,
+                    \"size\":7,
+                    \"text\":\"ID:\"
+                },
+                {
+                    \"element_id\":\"id\",
+                    \"name\":\"Product ID\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":0.5,
+                    \"size\":7
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"x\":0.2,
+                    \"y\":1,
+                    \"size\":8,
+                    \"text\":\"Qty:\"
+                },
+                {
+                    \"element_id\":\"quantity\",
+                    \"name\":\"Quantity\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":1,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Loc:\",
+                    \"x\":0.2,
+                    \"y\":1.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"strain.slug\",
+                    \"name\":\"Strain\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":2.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"qr_code\",
+                    \"name\":\"QR Code\",
+                    \"type\":\"qr\",
+                    \"text\":null,
+                    \"x\":6.5,
+                    \"y\":0.8,
+                    \"size\":1.8
+                },
+                {
+                    \"element_id\":\"location.slug\",
+                    \"name\":\"Location\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":null,
+                    \"x\":1.6,
+                    \"y\":1.5,
+                    \"size\":8
+                },
+                {
+                    \"element_id\":\"free_text\",
+                    \"name\":\"Free text\",
+                    \"type\":\"text\",
+                    \"is_bold\":false,
+                    \"text\":\"Strain:\",
+                    \"x\":0.2,
+                    \"y\":2.5,
+                    \"size\":8
+                }
+            ]"
+        ]);
+    }
+}
