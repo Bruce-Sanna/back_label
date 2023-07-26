@@ -20,14 +20,18 @@
             @foreach ($page as $element)
                 @if ($element['type'] === 'qr')
                     <div class="absolute top-[{{ centimetersToPixels($element['y']) }}px] left-[{{ centimetersToPixels($element['x']) }}px]">
-                        {!! QrCode::size(centimetersToPixels($element['size']))->generate(isset($element['content']) ? $element['content'] : ''); !!}
+                        {!! QrCode::size(centimetersToPixels($element['size']))
+                            ->generate(isset($element['content']) ? $element['content'] : ''); !!}
                     </div>
                 @endif
     
                 @if ($element['type'] === 'text')
                     <div 
-                        class="absolute !p-0 !m-0 top-[{{ centimetersToPixels($element['y']) }}px] left-[{{ centimetersToPixels($element['x']) }}px] {{ isset($element['is_bold']) && $element['is_bold'] ? 'font-black' : '' }}" 
-                        style="font-size: {{ $element['size'] }}pt">
+                        class="absolute !p-0 !m-0 
+                        top-[{{ centimetersToPixels($element['y']) }}px] 
+                        left-[{{ centimetersToPixels($element['x']) }}px] 
+                        {{ isset($element['is_bold']) && $element['is_bold'] ? 'font-black' : '' }}" 
+                        style="font-size: {{ $element['font_size'] }}pt">
                         {{ isset($element['content']) ? $element['content'] : '-' }}
                     </div>
                 @endif

@@ -32,3 +32,4 @@ Route::put('/labels/{label}', [LabelController::class, 'updateTemplate']);
 // Generate PDF with labels.
 Route::post('/labels/print', [LabelController::class, 'print']);
 
+Route::get('/labels/{label}', [LabelController::class, 'show']);

@@ -5,10 +5,11 @@ namespace App\Repositories;
 use Exception;
 use Spatie\Browsershot\Browsershot;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 
 class LabelRepository
 {
-    public function print($data)
+    public function print($data, $mode = 'save')
     {
         $label = $this->setLabelInformation($data);
 
@@ -16,24 +17,32 @@ class LabelRepository
 
         $html = $this->createView($label, $pages);
 
-        $path = $this->assingPathToSave($label['name'].$label['extension']);
+        $pdf = $this->createPDF($html, $label, $pages);
 
-        $this->createPDF($html, $path, $label, $pages);
-
-        return $this->createResponse($label['name'].$label['extension']);
+        return $this->returnPDF($pdf, $label['name'], $mode);
     }
 
-    public function setLabelInformation($data): array
+    private function returnPDF($pdf, $name, $mode)
+    {
+        if($mode === 'save') {
+            // This method assigns a storage path, saves the PDF file in that path and returns the URL to access the saved file.
+            return $this->saveAndReturnPDF($pdf, $name);
+        }
+
+        // This method returns a Base64 string from the generated PDF, without storing it.
+        return $this->returnStringPDF($pdf, $name);
+    } 
+
+    private function setLabelInformation($data): array
     {
         return [
-            'extension' => '.pdf',
-            'name' => $data->name,
+            'name' => $data->name.'.pdf',
             'width' => $data->width,
             'height' => $data->height,
         ];
     }
 
-    public function createLabelPages($pages): array
+    private function createLabelPages($pages): array
     {
         $full_pages = [];
 
@@ -46,7 +55,7 @@ class LabelRepository
         return $full_pages;
     }
 
-    public function createView($label ,$pages): String
+    private function createView($label ,$pages): String
     {
         $html = view('label')->with([
             'width' => centimetersToPixels($label['width']),
@@ -68,21 +77,35 @@ class LabelRepository
         return storage_path('app/public/labels/'.$name);
     }
 
-    public function createPDF($html, $path, $label, $pages): void
+    private function createPDF($html, $label, $pages): Browsershot
     {
-        Browsershot::html($html)
+        return Browsershot::html($html)
             ->showBackground()
             ->paperSize(centimetersToPixels($label['width']), centimetersToPixels($label['height']), 'px')
-            ->pages($this->setPagesToPrint(count($pages)))
-            ->save($path);
+            ->pages($this->setPagesToPrint(count($pages)));
     }
 
-    public function createResponse($file): String
+    private function returnStringPDF($pdf, $name): Array
     {
-        return asset($this->getDownloadLink(($file)));
+        return [
+            'name' => $name,
+            'content' => $pdf->base64pdf()
+        ];
     }
 
-    private function getDownloadLink($file): String 
+    private function saveAndReturnPDF($pdf, $name)
+    {
+        $pdf->save($this->assingPathToSave($name));
+
+        return $this->createResponse($name);
+    }
+
+    private function createResponse($file): String
+    {
+        return asset($this->getDownloadUrl(($file)));
+    }
+
+    private function getDownloadUrl($file): String 
     {
         if(!Storage::disk('public')->exists('labels/'.$file)){
             throw new Exception("File does not exist.", 404);
@@ -102,5 +125,16 @@ class LabelRepository
         }
 
         return implode(', ',$numbers);
+    }
+
+    public function validateNumberOfPages($pages): Void
+    {
+        $sum = array_reduce($pages, function($carry, $item) {
+            return $carry + $item['quantity'];
+        });
+
+        if($sum < 1){
+            throw ValidationException::withMessages(['error' => 'Send at least one label to create.']); 
+        }
     }
 }

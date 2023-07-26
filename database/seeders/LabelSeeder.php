@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Label;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class LabelSeeder extends Seeder
 {
@@ -26,7 +25,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":true,
                     \"x\":0.2,
                     \"y\":0.5,
-                    \"size\":7,
+                    \"font_size\":7,
                     \"text\":\"ID:\"
                 },
                 {
@@ -37,7 +36,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":0.5,
-                    \"size\":7
+                    \"font_size\":7
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -46,7 +45,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":false,
                     \"x\":0.2,
                     \"y\":1,
-                    \"size\":8,
+                    \"font_size\":8,
                     \"text\":\"Qty:\"
                 },
                 {
@@ -57,7 +56,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":1,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -67,7 +66,7 @@ class LabelSeeder extends Seeder
                     \"text\":\"Loc:\",
                     \"x\":0.2,
                     \"y\":1.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"location.slug\",
@@ -77,7 +76,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":1.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -87,7 +86,7 @@ class LabelSeeder extends Seeder
                     \"text\":\"Brand:\",
                     \"x\":0.2,
                     \"y\":2,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"brand.slug\",
@@ -97,7 +96,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":2,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -106,7 +105,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":false,
                     \"text\":\"Brand:\",
                     \"x\":4.2,\"y\":1,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"brand.slug\",
@@ -116,7 +115,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":5.6,
                     \"y\":1,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -125,7 +124,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":false,
                     \"x\":4.2,
                     \"y\":1.5,
-                    \"size\":8,
+                    \"font_size\":8,
                     \"text\":\"Stage:\"
                 },
                 {
@@ -136,7 +135,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":5.6,
                     \"y\":1.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -146,7 +145,7 @@ class LabelSeeder extends Seeder
                     \"text\":\"Strain:\",
                     \"x\":4.2,
                     \"y\":2,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"strain.slug\",
@@ -156,7 +155,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":5.6,
                     \"y\":2,
-                    \"size\":8
+                    \"font_size\":8
                 }]"
         ]);
 
@@ -173,7 +172,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":false,
                     \"x\":0.2,
                     \"y\":0.5,
-                    \"size\":7,
+                    \"font_size\":7,
                     \"text\":\"ID:\"
                 },
                 {
@@ -184,7 +183,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":0.5,
-                    \"size\":7
+                    \"font_size\":7
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -193,7 +192,7 @@ class LabelSeeder extends Seeder
                     \"is_bold\":false,
                     \"x\":0.2,
                     \"y\":1,
-                    \"size\":8,
+                    \"font_size\":8,
                     \"text\":\"Qty:\"
                 },
                 {
@@ -204,7 +203,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":1,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -214,7 +213,7 @@ class LabelSeeder extends Seeder
                     \"text\":\"Loc:\",
                     \"x\":0.2,
                     \"y\":1.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"strain.slug\",
@@ -224,7 +223,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":2.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"qr_code\",
@@ -243,7 +242,7 @@ class LabelSeeder extends Seeder
                     \"text\":null,
                     \"x\":1.6,
                     \"y\":1.5,
-                    \"size\":8
+                    \"font_size\":8
                 },
                 {
                     \"element_id\":\"free_text\",
@@ -253,7 +252,7 @@ class LabelSeeder extends Seeder
                     \"text\":\"Strain:\",
                     \"x\":0.2,
                     \"y\":2.5,
-                    \"size\":8
+                    \"font_size\":8
                 }
             ]"
         ]);
