@@ -136,5 +136,9 @@ class LabelRepository
         if($sum < 1){
             throw ValidationException::withMessages(['error' => 'Send at least one label to create.']); 
         }
+
+        if($sum > 500){
+            throw ValidationException::withMessages(['error' => 'The total quantity of labels must be less than 500.']); 
+        }
     }
 }

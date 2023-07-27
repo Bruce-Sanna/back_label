@@ -1,0 +1,317 @@
+{
+    "name": "Dymo30253asd",
+    "height": 2.7,
+    "width": 8.9,
+    "pages": [
+        {
+            "quantity": 8,
+            "page": {
+                "0": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": true,
+                    "x": 0.2,
+                    "y": 0.5,
+                    "font_size": 7,
+                    "text": "ID:",
+                    "content": "ID:"
+                },
+                "1": {
+                    "element_id": "id",
+                    "name": "Product ID",
+                    "type": "text",
+                    "is_bold": true,
+                    "text": "cccc-4680",
+                    "x": 1.6,
+                    "y": 0.5,
+                    "font_size": 7,
+                    "content": "cccc-4680"
+                },
+                "2": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 0.2,
+                    "y": 1,
+                    "font_size": 8,
+                    "text": "Qty:",
+                    "content": "Qty:"
+                },
+                "3": {
+                    "element_id": "quantity",
+                    "name": "Quantity",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": 14,
+                    "x": 1.6,
+                    "y": 1,
+                    "font_size": 8,
+                    "content": 14
+                },
+                "4": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Loc:",
+                    "x": 0.2,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "Loc:"
+                },
+                "5": {
+                    "element_id": "location.slug",
+                    "name": "Location",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "flowering-room",
+                    "x": 1.6,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "flowering-room"
+                },
+                "6": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Brand:",
+                    "x": 0.2,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "Brand:"
+                },
+                "7": {
+                    "element_id": "brand.slug",
+                    "name": "Brand",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 1.6,
+                    "y": 2,
+                    "font_size": 8
+                },
+                "8": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Brand:",
+                    "x": 4.2,
+                    "y": 1,
+                    "font_size": 8,
+                    "content": "Brand:"
+                },
+                "9": {
+                    "element_id": "brand.slug",
+                    "name": "Brand",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 5.6,
+                    "y": 1,
+                    "font_size": 8
+                },
+                "10": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 4.2,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "text": "Stage:",
+                    "content": "Stage:"
+                },
+                "11": {
+                    "element_id": "stage.slug",
+                    "name": "Stage",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "propagation",
+                    "x": 5.6,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "propagation"
+                },
+                "12": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Strain:",
+                    "x": 4.2,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "Strain:"
+                },
+                "13": {
+                    "element_id": "strain.slug",
+                    "name": "Strain",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "acapulco-gold",
+                    "x": 5.6,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "acapulco-gold"
+                }
+            }
+        },
+        {
+            "quantity": 10,
+            "page": {
+                "0": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": true,
+                    "x": 0.2,
+                    "y": 0.5,
+                    "font_size": 7,
+                    "text": "ID:",
+                    "content": "ID:"
+                },
+                "1": {
+                    "element_id": "id",
+                    "name": "Product ID",
+                    "type": "text",
+                    "is_bold": true,
+                    "text": "bbbb-4680",
+                    "x": 1.6,
+                    "y": 0.5,
+                    "font_size": 7,
+                    "content": "bbbb-4680"
+                },
+                "2": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 0.2,
+                    "y": 1,
+                    "font_size": 8,
+                    "text": "Qty:",
+                    "content": "Qty:"
+                },
+                "3": {
+                    "element_id": "quantity",
+                    "name": "Quantity",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": 26,
+                    "x": 1.6,
+                    "y": 1,
+                    "font_size": 8,
+                    "content": 26
+                },
+                "4": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Loc:",
+                    "x": 0.2,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "Loc:"
+                },
+                "5": {
+                    "element_id": "location.slug",
+                    "name": "Location",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "flowering-bay-2e",
+                    "x": 1.6,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "flowering-bay-2e"
+                },
+                "6": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Brand:",
+                    "x": 0.2,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "Brand:"
+                },
+                "7": {
+                    "element_id": "brand.slug",
+                    "name": "Brand",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 1.6,
+                    "y": 2,
+                    "font_size": 8
+                },
+                "8": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Brand:",
+                    "x": 4.2,
+                    "y": 1,
+                    "font_size": 8,
+                    "content": "Brand:"
+                },
+                "9": {
+                    "element_id": "brand.slug",
+                    "name": "Brand",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 5.6,
+                    "y": 1,
+                    "font_size": 8
+                },
+                "10": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "x": 4.2,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "text": "Stage:",
+                    "content": "Stage:"
+                },
+                "11": {
+                    "element_id": "stage.slug",
+                    "name": "Stage",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "propagation",
+                    "x": 5.6,
+                    "y": 1.5,
+                    "font_size": 8,
+                    "content": "propagation"
+                },
+                "12": {
+                    "element_id": "free_text",
+                    "name": "Free text",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "Strain:",
+                    "x": 4.2,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "Strain:"
+                },
+                "13": {
+                    "element_id": "strain.slug",
+                    "name": "Strain",
+                    "type": "text",
+                    "is_bold": false,
+                    "text": "acapulco-gold",
+                    "x": 5.6,
+                    "y": 2,
+                    "font_size": 8,
+                    "content": "acapulco-gold"
+                }
+            }
+        }
+    ]
+}
