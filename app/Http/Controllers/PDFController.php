@@ -71,8 +71,6 @@ class PDFController extends Controller
             
         ]);
 
-
-
         $html = view('label')->with([
             'width' => centimetersToPixels($width),
             'height' => centimetersToPixels($height),
@@ -84,7 +82,6 @@ class PDFController extends Controller
             Storage::makeDirectory('labels'); 
         }
 
-        // To save in local directory
         $save_to_file = storage_path('app/labels/'.$pdf_name.$extension);
 
 
@@ -96,8 +93,6 @@ class PDFController extends Controller
         */
         // To save in public directory
         // $save_to_file = storage_path('app/public/labels/'.$pdf_name.$extension);
-
-
 
         Browsershot::html($html)
             ->showBackground()

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\LabelController;
+use App\Http\Controllers\Api\PDFController as ApiPDFController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
@@ -33,3 +34,8 @@ Route::put('/labels/{label}', [LabelController::class, 'updateTemplate']);
 Route::post('/labels/print', [LabelController::class, 'print']);
 
 Route::get('/labels/{label}', [LabelController::class, 'show']);
+
+Route::delete('/labels/{label}', [LabelController::class, 'destroy']);
+
+/* To Generate PDF */
+Route::post('/pdf/create', [ApiPDFController::class, 'test']);

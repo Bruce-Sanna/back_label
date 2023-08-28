@@ -29,7 +29,6 @@ Route::get('/schema', [PDFController::class, 'schema']);
 
 Route::get('/schema-example', [PDFController::class, 'schema_example']);
 
-
 Route::get('/schema_two', [PDFController::class, 'schema_two']);
 
  

@@ -23,7 +23,7 @@ class LabelController extends Controller
     public function index() 
     {
         try {
-            $labels = Label::all();
+            $labels = Label::orderBy('id', 'desc')->get();
 
             return $this->responseSuccess($labels, 'Labels fetched successfully');
         } catch (Exception $e) {
@@ -73,5 +73,12 @@ class LabelController extends Controller
     public function show(Label $label)
     {
         return $this->responseSuccess($label, 'Label found successfully');
+    }
+
+    public function destroy(Label $label)
+    {
+        $label->delete();
+
+        return $this->responseSuccess([], 'Label deleted successfuly');
     }
 }
