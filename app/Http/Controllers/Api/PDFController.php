@@ -15,10 +15,10 @@ class PDFController extends Controller
     public function test(Request $request) 
     {
         try {
-            $top = 2.5; 
-            $right = 2.5; 
-            $bottom = 2.5; 
-            $left = 2.5; 
+            $top = 1.5; 
+            $right = 1.5; 
+            $bottom = 1.5; 
+            $left = 1.5; 
 
             $base_pdf = view('base_pdf')->with([
                 'data' => $request->data
@@ -29,15 +29,14 @@ class PDFController extends Controller
             $pdf = Browsershot::html($base_pdf)
                 ->showBackground()
                 ->margins($top, $right, $bottom, $left, 'cm')
-                ->format('A4');
-                /* ->save($save_to_file); */
+                ->format('Letter');
     
             $data = [
                 'name' => 'Invoice',
                 'content' => $pdf->base64pdf()
             ];
 
-            return $this->responseSuccess($data, 'PDF generated successfully');
+            return $this->responseSuccess($data, 'PDF generated successfully!');
         } catch (Exception $e) {
             return $this->responseError([], $e->getMessage());
         }
