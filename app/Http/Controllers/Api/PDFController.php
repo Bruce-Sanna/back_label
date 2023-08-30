@@ -7,34 +7,36 @@ use Illuminate\Http\Request;
 use Spatie\Browsershot\Browsershot;
 use App\Traits\ResponseTrait;
 use Exception;
+use App\Repositories\PDFRepository;
 
 class PDFController extends Controller
 {
     use ResponseTrait;
 
+    public function __construct(private PDFRepository $pdf)
+    {
+        $this->pdf = $pdf;
+    }
+
     public function test(Request $request) 
     {
-        try {
-            $top = 1.5; 
-            $right = 1.5; 
-            $bottom = 1.5; 
-            $left = 1.5; 
+        $margins = [
+            'top' => 1.5, //cm
+            'right' => 1.5,
+            'bottom' => 1.5,
+            'left' => 1.5,
+        ];
 
-            $base_pdf = view('base_pdf')->with([
-                'data' => $request->data
-            ])->render();
-    
-            $save_to_file = storage_path('app/labels/test.pdf');
-    
-            $pdf = Browsershot::html($base_pdf)
-                ->showBackground()
-                ->margins($top, $right, $bottom, $left, 'cm')
-                ->format('Letter');
-    
-            $data = [
-                'name' => 'Invoice',
-                'content' => $pdf->base64pdf()
-            ];
+        $name = 'invoice.pdf';
+
+        /*
+        | The format options available by puppeteer are:
+        | https://spatie.be/docs/browsershot/v2/usage/creating-pdfs#content-using-a-predefined-format
+        */
+        $page_size = 'Letter';
+
+        try {
+            $data = $this->pdf->print($request, $name, $page_size, $margins, 'show');
 
             return $this->responseSuccess($data, 'PDF generated successfully!');
         } catch (Exception $e) {

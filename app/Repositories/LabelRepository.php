@@ -9,6 +9,11 @@ use Illuminate\Validation\ValidationException;
 
 class LabelRepository
 {
+    public function __construct(private DownloadRepository $download)
+    {
+        $this->download = $download;
+    }
+
     public function print($data, $mode = 'save')
     {
         $label = $this->setLabelInformation($data);
@@ -19,19 +24,9 @@ class LabelRepository
 
         $pdf = $this->createPDF($html, $label, $pages);
 
-        return $this->returnPDF($pdf, $label['name'], $mode);
+        return $this->download->returnPDF($pdf, $label['name'], $mode);
+        // return $this->returnPDF($pdf, $label['name'], $mode);
     }
-
-    private function returnPDF($pdf, $name, $mode)
-    {
-        if($mode === 'save') {
-            // This method assigns a storage path, saves the PDF file in that path and returns the URL to access the saved file.
-            return $this->saveAndReturnPDF($pdf, $name);
-        }
-
-        // This method returns a Base64 string from the generated PDF, without storing it.
-        return $this->returnStringPDF($pdf, $name);
-    } 
 
     private function setLabelInformation($data): array
     {
@@ -66,38 +61,12 @@ class LabelRepository
         return $html;
     }
 
-    private function assingPathToSave($name): String 
-    {   
-        // Create folder if not exists.
-        if(!Storage::exists('public/labels')) {
-            Storage::makeDirectory('public/labels'); 
-        }
-
-        // Returns the path where the pdf will be saved.
-        return storage_path('app/public/labels/'.$name);
-    }
-
     private function createPDF($html, $label, $pages): Browsershot
     {
         return Browsershot::html($html)
             ->showBackground()
             ->paperSize(centimetersToPixels($label['width']), centimetersToPixels($label['height']), 'px')
             ->pages($this->setPagesToPrint(count($pages)));
-    }
-
-    private function returnStringPDF($pdf, $name): Array
-    {
-        return [
-            'name' => $name,
-            'content' => $pdf->base64pdf()
-        ];
-    }
-
-    private function saveAndReturnPDF($pdf, $name)
-    {
-        $pdf->save($this->assingPathToSave($name));
-
-        return $this->createResponse($name);
     }
 
     private function createResponse($file): String
