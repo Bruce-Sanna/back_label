@@ -16,7 +16,7 @@
         }
 
         h2 {
-            font-size: 14px !important;
+            font-size: 18px !important; /* Estaba en 14 */
         }
 
         .text-sm {
@@ -33,6 +33,14 @@
 
         .notPrintableArea {
             display: none !important;
+        }
+
+        .mt-5 {
+            margin-top: 7px !important;
+        }
+
+        .air-sm {
+            margin-bottom: -10px !important;
         }
 
         .mt-4 {
@@ -70,8 +78,26 @@
             height: 25px !important;
         }
 
-        .leading-6 {
-            line-height: 13px !important; /* 20px */
+        .leading-5 {
+            line-height: 15px !important;
+        }
+
+        .opacity-10 {
+            opacity: 0.15 !important;
+        }
+
+        table td:last-child {
+            padding: 0 !important;
+        }
+
+
+        .shadow-md {
+            box-shadow: 0 0px 0px 0px rgb(0 0 0 / 0.0), 0 0px 0px -0px rgb(0 0 0 / 0.0) !important;
+        }
+
+        .print-border-rounded {
+            border-radius: 100px;
+            border: 1px solid rgb(156 163 175) !important;
         }
     </style>
 </head>
