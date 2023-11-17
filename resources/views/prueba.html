@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .contenedor {
+      height: 200px; /* Altura fija del contenedor */
+      border: 1px solid #ccc; /* Solo para visualización */
+      overflow: hidden; /* Para ocultar el texto que desborda el contenedor */
+    }
+
+    .texto {
+      font-size: 4rem; /* Tamaño de fuente máximo por defecto */
+      white-space: pre-wrap; /* Permite el salto de línea */
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <p class="texto" id="texto">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat assumenda omnis culpa eveniet dolorem provident ducimus ipsum? Soluta expedita doloribus, suscipit aspernatur incidunt quaerat quia. Itaque modi doloremque inventore ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nam at reiciendis suscipit! Ex, dolore. Esse vel ut eum architecto ea dolores dolor nobis minus officiis cum consequatur, assumenda voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, expedita! Quibusdam consequuntur, placeat sed vero possimus ipsam, ullam autem doloribus quaerat cumque maxime necessitatibus delectus recusandae, in asperiores illum incidunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia debitis, in assumenda, delectus ipsum maxime libero laboriosam, labore nam totam id sapiente architecto iste odio nulla iusto modi corporis quidem!Loremlorem lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint, exercitationem doloremque consectetur cupiditate fugit dignissimos maiores nostrum obcaecati dolorum, ipsa nisi veritatis amet iste aspernatur enim perspiciatis? Officia, corrupti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, voluptates minima. Earum, id ad eum expedita beatae corrupti ratione ullam dolorem quo explicabo, aperiam mollitia temporibus voluptatem delectus voluptates odit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi non voluptas tenetur commodi porro molestias sed deserunt, incidunt eius, recusandae in dolor ea veritatis numquam modi maxime odio quaerat fugit.
+    </p>
+  </div>
+
+  <script>
+    window.onload = function() {
+      ajustarTamanioDeFuente();
+    };
+
+    function ajustarTamanioDeFuente() {
+      var contenedor = document.querySelector('.contenedor');
+      var texto = document.getElementById('texto');
+
+      texto.style.fontSize = '2rem'
+
+      while (texto.scrollHeight > contenedor.clientHeight && parseFloat(getComputedStyle(texto).fontSize) > 0.2) {
+        texto.style.fontSize = (parseFloat(getComputedStyle(texto).fontSize) - 0.1) + 'px';
+      }
+    }
+  </script>
+</body>
+</html>

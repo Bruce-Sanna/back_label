@@ -43,4 +43,30 @@ class PDFController extends Controller
             return $this->responseError([], $e->getMessage());
         }
     }
+
+    public function manifest(Request $request) 
+    {
+        $margins = [
+            'top' => 1.1, //cm
+            'right' => 1.1,
+            'bottom' => 1.1,
+            'left' => 1.1,
+        ];
+
+        $name = 'Manifest.pdf';
+        
+        /*
+        | The format options available by puppeteer are:
+        | https://spatie.be/docs/browsershot/v2/usage/creating-pdfs#content-using-a-predefined-format
+        */
+        $page_size = 'Letter';
+
+        try {
+            $data = $this->pdf->print($request, $name, $page_size, $margins, 'show', 'manifest');
+
+            return $this->responseSuccess($data, 'PDF generated successfully!');
+        } catch (Exception $e) {
+            return $this->responseError([], $e->getMessage());
+        }
+    }
 }

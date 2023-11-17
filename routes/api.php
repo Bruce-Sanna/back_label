@@ -39,3 +39,6 @@ Route::delete('/labels/{label}', [LabelController::class, 'destroy']);
 
 /* To Generate PDF */
 Route::post('/pdf/create', [ApiPDFController::class, 'test']);
+
+/* To generate Manifest PDF */
+Route::post('/pdf/manifest/create', [ApiPDFController::class, 'manifest']);

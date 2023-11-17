@@ -11,18 +11,18 @@ class PDFRepository
         $this->download = $download;
     }
 
-    public function print($data, $name, $page_size, $margins, $mode = 'save')
+    public function print($data, $name, $page_size, $margins, $mode = 'save', $blade_view = 'base_pdf')
     {
-        $html = $this->createInvoiceView($data);
+        $html = $this->createInvoiceView($data, $blade_view);
 
         $pdf = $this->createPDF($html, $page_size, $margins);
 
         return $this->download->returnPDF($pdf, $name, $mode);
     }
 
-    public function createInvoiceView($content)
+    public function createInvoiceView($content, $blade_view)
     {
-        $html = view('base_pdf')->with([
+        $html = view($blade_view)->with([
             'data' => $content->data
         ])->render();
 
