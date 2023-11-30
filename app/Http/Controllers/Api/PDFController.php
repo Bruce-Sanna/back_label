@@ -18,6 +18,7 @@ class PDFController extends Controller
         $this->pdf = $pdf;
     }
 
+    // For labels
     public function test(Request $request) 
     {
         $margins = [
