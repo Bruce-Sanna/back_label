@@ -23,7 +23,7 @@ class PDFRepository
     public function createInvoiceView($content, $blade_view)
     {
         $html = view($blade_view)->with([
-            'data' => $content->data
+            'data' => $content->data,
         ])->render();
 
         return $html;
@@ -32,6 +32,9 @@ class PDFRepository
     private function createPDF($html, $page_size, $margins): Browsershot
     {
         return Browsershot::html($html)
+            ->showBrowserHeaderAndFooter()
+            ->hideHeader()
+            ->footerHtml(view('page_number')->render())
             ->showBackground()
             ->margins($margins['top'], $margins['right'], $margins['bottom'], $margins['left'],'cm')
             ->format($page_size);

@@ -48,6 +48,16 @@
             line-height: 16px !important;
         }
 
+        .text-2xl {
+            font-size: 14px !important;
+            line-height: 16px !important;
+        }
+
+        .text-3xl {
+            font-size: 18px !important;
+            line-height: 16px !important;
+        }
+
         /* Table */
         table {
             border: 1px solid black;
@@ -61,14 +71,13 @@
 
         /* Custom classes */
         .custom-leading {
-            line-height: .75rem/* 12px */ !important;
+            line-height: .75rem /* 12px */ !important;
         }
     </style>
 </head>
 
 <body class="!p-0 !m-0">
     {!! $data !!}
-
 <script>
     window.onload = function() {
       // adjustTextSie();
