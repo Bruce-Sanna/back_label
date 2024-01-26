@@ -90,7 +90,6 @@
             padding: 0 !important;
         }
 
-
         .shadow-md {
             box-shadow: 0 0px 0px 0px rgb(0 0 0 / 0.0), 0 0px 0px -0px rgb(0 0 0 / 0.0) !important;
         }
@@ -98,6 +97,11 @@
         .print-border-rounded {
             border-radius: 100px;
             border: 1px solid rgb(156 163 175) !important;
+        }
+
+        /* Custom classes */
+        .custom-leading {
+            line-height: .75rem /* 12px */ !important;
         }
     </style>
 </head>

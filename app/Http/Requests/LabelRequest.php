@@ -36,7 +36,7 @@ class LabelRequest extends FormRequest
             'label_elements.*.type' => 'required',
             'label_elements.*.text' => 'required_if:label_elements.*.element_id,==,free_text',
             'label_elements.*.size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,qr|min:1|max:1000", 
-            'label_elements.*.font_size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,text|min:0|max:1000", 
+            'label_elements.*.font_size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,text|min:1|max:1000", 
         ];
     }
 
@@ -54,6 +54,7 @@ class LabelRequest extends FormRequest
             'label_elements.*.size.decimal' => "The QR size field must have :decimal decimal places.", 
             'label_elements.*.font_size.required_if' => "The font size is required.", 
             'label_elements.*.font_size.decimal' => "The font size field must have :decimal decimal places.", 
+            'label_elements.*.font_size.min' => "The font size must be greater than 0.",  
             'label_elements.*.text.required_if' => "The free text field is required.", 
         ];
     }
