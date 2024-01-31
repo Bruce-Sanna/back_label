@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\ValidationException;
 
 class LabelPrintRequest extends FormRequest
 {
@@ -27,14 +26,15 @@ class LabelPrintRequest extends FormRequest
             'width' => 'required',
             'height' => 'required',
             'pages' => 'required',
-            'pages.*.quantity' => 'required|numeric|min:0|max:1000'
+            'pages.*.quantity' => 'required|integer|min:0|max:1000'
         ];
     }
 
     public function messages()
     {
         return [
-            'pages.*.quantity' => 'Negative quantities are not accepted.',
+            'pages.*.quantity.min' => 'Negative quantities are not accepted.',
+            'pages.*.quantity.integer' => 'The quantity field must be an integer.',
         ];
     }
 }

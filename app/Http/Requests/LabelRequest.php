@@ -36,7 +36,7 @@ class LabelRequest extends FormRequest
             'label_elements.*.type' => 'required',
             'label_elements.*.text' => 'required_if:label_elements.*.element_id,==,free_text',
             'label_elements.*.size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,qr|min:1|max:1000", 
-            'label_elements.*.font_size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,text|min:1|max:1000", 
+            'label_elements.*.font_size' => "numeric|decimal:0,2|required_if:label_elements.*.type,==,text|min:1|max:500", 
         ];
     }
 
@@ -46,10 +46,12 @@ class LabelRequest extends FormRequest
             'label_elements.*.element_id' => 'The label element field is required.',
             'label_elements.*.x.required' => 'X position is required.',
             'label_elements.*.x.max' => 'The x position must not be greater than width.',
+            'label_elements.*.x.min' => 'The x position must be at least 0.',
             'label_elements.*.x.decimal' => 'The x position field must have :decimal decimal places.',
             'label_elements.*.y.decimal' => 'The x position field must have :decimal decimal places.',
             'label_elements.*.y.required' => 'Y position is required.',
             'label_elements.*.y.max' => 'The y position must not be greater than height.',
+            'label_elements.*.y.min' => 'The y position must be at least 0.',
             'label_elements.*.size.required_if' => "The QR size is required.", 
             'label_elements.*.size.decimal' => "The QR size field must have :decimal decimal places.", 
             'label_elements.*.font_size.required_if' => "The font size is required.", 
